@@ -5,9 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boxin | Sell or Buy items</title>
+    <link rel="stylesheet" href="../style/common.css" />
+    <link rel="stylesheet" href="../style/index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="../script/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
-    <header></header>
-    <ul></ul>
+    <div class="wrapper">
+      <!-- Main Contents -->
+      <article class="content">
+        <!-- Header & Navbar -->
+        <div id="nav">
+          <div class="multi_color_border"></div>
+          <div class="top_nav">
+            <div class="left">
+              <div class="logo">
+                <a href="#"
+                  ><p><span>Box</span>in</p></a
+                >
+              </div>
+              <div class="search_bar">
+                <input type="text" placeholder="Search" />
+                <button type="submit">Submit</button>
+              </div>
+            </div>
+            <div class="right">
+              <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bottom_nav">
+            <ul>
+              <li><a href="./available.html">Available Slots</a></li>
+              <li><a href="./faq.html">FAQ</a></li>
+              <li><a href="./location.html">Location</a></li>
+            </ul>
+          </div>
+        </div>
+        <main>
+          <img
+            src="../resources/img/transaction.jpg"
+            class="inline-photo show-on-scroll"
+          />
+        </main>
+        <div id="image1" class="box" data-aos="zoom-in">a</div>
+        <div id="content1" class="box" data-aos="zoom-in-up">a</div>
+        <div id="content2" class="box" data-aos="flip-up">b</div>
+        <div id="image2" class="box" data-aos="flip-down">b</div>
+        <div id="image3" class="box" data-aos="slide-left">c</div>
+        <div id="content3" class="box" data-aos="slide-left">c</div>
+        <!-- Footer -->
+        <footer>
+          <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
+          <br />
+          <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+        </footer>
+      </article>
+    </div>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
