@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/join.css" />
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
+    <script src="../script/index.js"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Main Contents -->
+      <article class="content">
+        <!-- Header & Navbar -->
+        <div id="nav">
+          <div class="multi_color_border"></div>
+          <div class="top_nav">
+            <div class="left">
+              <div class="logo">
+                <a href="/index"
+                  ><p><span>Box</span>in</p></a
+                >
+              </div>
+              <div class="search_bar">
+                <input type="text" placeholder="Search" />
+                <button type="submit">Submit</button>
+              </div>
+            </div>
+            <div class="right">
+              {% if user and user.id %}
+              <ul>
+                <li>
+                  <a href="javascript:void(0)"
+                    >{{'Welcome! ' + user.nickName}}</a
+                  >
+                  <a href="/auth/logout">Log Out</a>
+                </li>
+                <li><a href=""></a></li>
+              </ul>
+              {% else %}
+              <ul>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/join">Join</a></li>
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+          <div class="bottom_nav">
+            <ul>
+              <li><a href="/available">Available Slots</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/location">Location</a></li>
+            </ul>
+          </div>
+        </div>
+        {% block content %}
+      </article>
+    </div>
+    {% endblock %}
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get("loginError")) {
+          alert(new URL(location.href).searchParams.get("loginError"));
+        }
+      };
+    </script>
+    <script src="bower_components/aos/dist/aos.js"></script>
+    {% block script %} {% endblock %}
+  </body>
+</html>

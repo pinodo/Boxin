@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="timeline">
+  <form action="/auth/join" id="foin-form" method="post">
+    <div class="input-group">
+      <label for="join-email">Email</label>
+      <input type="email" id="join-email" name="email" />
+    </div>
+    <div class="input-group">
+      <label for="join-nick">NickName</label>
+      <input type="text" id="join-nick" name="nickName" />
+    </div>
+    <div class="input-group">
+      <label for="join-password">Password</label>
+      <input type="password" id="join-password" name="password" />
+    </div>
+    <div>
+      <button id="join-btn" type="submit" class="btn">Join</button>
+    </div>
+  </form>
+</div>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
+  <br />
+  <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+</footer>
+
+{% endblock %} {% block script %}
+<script>
+  window.onload = () => {
+    if (new URL(location.href).searchParams.get("error")) {
+      alert("Email is already exists");
+    }
+  };
+</script>
+{% endblock %}
