@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "alvin",
-    "password": 1234,
-    "database": "boxin-board",
+    "username": "root",
+    "password": "1234",
+    "database": "boxinboard",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

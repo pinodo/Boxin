@@ -4,10 +4,11 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   /* rows: nav, main, contents, footer */
-  grid-template-rows: 0.2fr 1.5fr 1.2fr 1.2fr 1.2fr 0.4fr;
+  grid-template-rows: 0.2fr 0.2fr 0.1fr 1.2fr 1.2fr 1.2fr 0.4fr;
   grid-template-areas:
     "nav nav"
     "main main"
+    "content0 content0"
     "image1 content1"
     "content2 image2"
     "image3 content3"
@@ -16,10 +17,13 @@
   font-family: "Roboto Slab", sans-serif;
 }
 
+#welcome {
+  color: crimson;
+}
+
 main img {
   width: 100%;
-  margin-top: -0.2rem;
-  margin-bottom: -0.2rem;
+  margin-bottom: 0;
 }
 
 #nav {
@@ -28,37 +32,70 @@ main img {
 
 main {
   grid-area: main;
-  background: #fff;
+}
+
+#content0 {
+  position: relative;
+  margin-top: 13rem;
+  grid-area: content0;
+  font-size: 2rem;
+  background: crimson;
+  color: #fff;
+  height: 20rem;
+  margin-bottom: 0;
+}
+#content0 h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #image1 {
+  height: 100%;
   grid-area: image1;
-  background: #999;
+  opacity: 0.7;
+  padding: 0;
 }
 
 #content1 {
+  position: relative;
   grid-area: content1;
-  background: #ccc;
+  background-color: #ebf4fa;
+  color: #555555;
+  width: 100%;
+  height: 100%;
+}
+#content1 p {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #content2 {
   grid-area: content2;
-  background: #ccc;
+  width: 100%;
+  height: 100%;
 }
 
 #image2 {
   grid-area: image2;
-  background: #999;
+  width: 100%;
+  height: 100%;
 }
 
 #image3 {
   grid-area: image3;
-  background: #999;
+  width: 100%;
+  height: 100%;
 }
 
 #content3 {
   grid-area: content3;
-  background: #ccc;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -69,13 +106,11 @@ footer {
 
 /* AOS */
 .box {
-  width: 90%;
-  margin: 20px auto;
+  width: 100%;
+  margin: auto;
   max-height: 500px;
   padding: 75px 20px;
-  background: #ccc;
   text-align: center;
-  color: #fff;
   font-size: 3em;
 }
 
@@ -83,16 +118,23 @@ footer {
 @media only screen and (max-width: 550px) {
   .content {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 0.8fr;
+    grid-template-rows: 0.3fr 0.3fr 0.2fr 0.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 0.8fr;
     grid-template-areas:
       "nav"
       "main"
+      "content0"
       "image1"
       "content1"
-      "content2"
       "image2"
+      "content2"
       "image3"
       "content3"
       "footer";
+    grid-gap: 0;
+  }
+
+  #content0 {
+    margin-top: -0.5rem;
+    margin-bottom: 0;
   }
 }

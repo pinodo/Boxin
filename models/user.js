@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-module.export = class User extends Sequelize.Model {
+module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
@@ -43,9 +43,14 @@ module.export = class User extends Sequelize.Model {
   static associate(db) {
     db.User.hasMany(db.Post);
     db.User.belongsToMany(db.User, {
-      foreignKey: "postId",
-      as: "Posts",
-      through: "Post",
+      foreignKey: "followingId",
+      as: "Followers",
+      through: "Follow",
+    });
+    db.User.belongsToMany(db.User, {
+      foreignKey: "followerId",
+      as: "Followings",
+      through: "Follow",
     });
   }
 };

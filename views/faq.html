@@ -1,46 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boxin | Sell or Buy items</title>
-    <link rel="stylesheet" href="../style/common.css" />
-    <link rel="stylesheet" href="../style/faq.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- Header & Navbar -->
-      <div class="multi_color_border"></div>
-      <div class="top_nav">
-        <div class="left">
-          <div class="logo">
-            <a href="./index.html"
-              ><p><span>Box</span>in</p></a
-            >
-          </div>
-          <div class="search_bar">
-            <input type="text" placeholder="Search" />
-            <button type="submit">Submit</button>
-          </div>
-        </div>
-        <div class="right">
-          <ul>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="bottom_nav">
-        <ul>
-          <li><a href="./available.html">Available Slots</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="./location.html">Location</a></li>
-        </ul>
-      </div>
-    </div>
-    <div>faq</div>
-  </body>
-  <!-- Footer -->
-  <footer></footer>
-</html>
+{% extends 'layout.html' %} {% block content %}
+
+<!-- FAQ content -->
+FAQ
+<!-- Footer -->
+<footer>
+  <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
+  <br />
+  <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+</footer>
+{% endblock %}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  AOS.init();
+</script>
+{% block script %} {% endblock %}

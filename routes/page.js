@@ -1,10 +1,10 @@
 const express = require("express");
+const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 
 const router = express.Router();
 
 router.use((req, res, next) => {
-  res.locals.user = null;
-  res.locals.nickName = null;
+  res.locals.user = req.user;
   next();
 });
 
@@ -20,7 +20,11 @@ router.get("/faq", (req, res) => {
   res.render("faq", { title: "FAQ" });
 });
 
-router.get("/join", (req, res) => {
+router.get("/login", (req, res) => {
+  res.render("login", { title: "Login" });
+});
+
+router.get("/join", isNotLoggedIn, (req, res) => {
   res.render("join", { title: "Join - Boxin" });
 });
 
@@ -29,7 +33,7 @@ router.get("/index", (req, res) => {
 });
 
 router.get("/", (req, res, next) => {
-  res.render("index", { tile: "Boxin" });
+  res.render("index", { title: "Boxin" });
 });
 
 module.exports = router;
