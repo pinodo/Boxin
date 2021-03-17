@@ -6,4 +6,4 @@ In this vein, I came up with the idea that people can purchase and sell their us
 
 Boxin is an indirect transaction management system, which manages the available slots and connects the seller and buyer.
 
-Technologies used: HTML, CSS, JavaScript, NodeJS, git.
+Technologies used: HTML, CSS, JavaScript, NodeJS, express, MySQL, git.
