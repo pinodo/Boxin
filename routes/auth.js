@@ -62,9 +62,13 @@ router.get("/logout", isLoggedIn, (req, res) => {
 
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
-router.get("/google/callback", passport.authenticate("google"), (req, res) => {
-  res.redirect("/");
-});
+router.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    res.redirect("/");
+  }
+);
 
 // function authSuccess(req, res) {
 //   res.redirect("/");

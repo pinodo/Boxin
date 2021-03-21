@@ -3,8 +3,8 @@
   height: 100%;
   width: 100%;
   grid-template-columns: 1fr 1fr;
-  /* rows: nav, main, contents, footer */
-  grid-template-rows: 0.2fr 0.2fr 0.1fr 1.2fr 1.2fr 1.2fr 0.4fr;
+  /* rows: nav, main, content0, contents, footer */
+  grid-template-rows: 0.2fr 0.6fr 0.5fr 0.6fr 0.6fr 0.6fr 0.1fr;
   grid-template-areas:
     "nav nav"
     "main main"
@@ -23,6 +23,7 @@
 
 main img {
   width: 100%;
+  height: 80vh;
   margin-bottom: 0;
 }
 
@@ -38,11 +39,12 @@ main {
   position: relative;
   margin-top: 13rem;
   grid-area: content0;
-  font-size: 2rem;
-  background: crimson;
+  font-size: 3rem;
+  background: #ffab35;
   color: #fff;
   height: 20rem;
   margin-bottom: 0;
+  margin-top: -0.3rem;
 }
 #content0 h2 {
   position: absolute;
@@ -68,22 +70,32 @@ main {
 }
 #content1 p {
   position: absolute;
-  font-size: 4rem;
+  font-size: 2rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 #content2 {
+  position: relative;
   grid-area: content2;
+  background-color: #ebf4fa;
+  color: #555555;
   width: 100%;
   height: 100%;
+}
+#content2 p {
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #image2 {
   grid-area: image2;
-  width: 100%;
   height: 100%;
+  padding: 0;
 }
 
 #image3 {
@@ -93,9 +105,19 @@ main {
 }
 
 #content3 {
+  position: relative;
   grid-area: content3;
+  background-color: #ebf4fa;
+  color: #555555;
   width: 100%;
   height: 100%;
+}
+#content3 p {
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 footer {
@@ -108,17 +130,17 @@ footer {
 .box {
   width: 100%;
   margin: auto;
-  max-height: 500px;
+  max-height: 400px;
   padding: 75px 20px;
   text-align: center;
   font-size: 3em;
 }
 
 /* Media query */
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 700px) {
   .content {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 0.2fr 0.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 0.8fr;
+    grid-template-rows: 0.2fr 0.6fr 0.5fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.1fr;
     grid-template-areas:
       "nav"
       "main"
@@ -136,5 +158,9 @@ footer {
   #content0 {
     margin-top: -0.5rem;
     margin-bottom: 0;
+  }
+
+  .box p {
+    font-size: 1rem;
   }
 }

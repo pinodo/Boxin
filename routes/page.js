@@ -32,6 +32,10 @@ router.get("/index", (req, res) => {
   res.render("index", { title: "Index - Boxin" });
 });
 
+router.get("/chat", (req, res) => {
+  res.render("chat", { title: "Live Chat" });
+});
+
 router.get("/", (req, res, next) => {
   res.render("index", { title: "Boxin" });
 });

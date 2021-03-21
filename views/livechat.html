@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} {% block content %}
+
+<!-- FAQ content -->
+<div class="frequent">
+  <div>live chat room</div>
+</div>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
+  <br />
+  <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+</footer>
+{% endblock %} {% block script %}
+<script src="/socket.io/socket.io.js">
+  const socket = io.connect('http://localhost:8005', {
+    path: '/socket.io',
+    transports: ['websocket'],
+  });
+  socket.on('news', function (data) {
+    conso.log(data);
+    socket.emit('reply', 'Hello Node.JS');
+  });
+</script>
+{% endblock %}
