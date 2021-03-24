@@ -1,28 +1,30 @@
 {% extends 'layout.html' %} {% block content %}
-<div class="timeline">
-  <form action="/auth/join" id="join-form" method="post">
-    <div class="input-group">
-      <label for="join-email">Email</label>
-      <input type="email" id="join-email" name="email" />
-    </div>
-    <div class="input-group">
-      <label for="join-nick">NickName</label>
-      <input type="text" id="join-nick" name="nickName" />
-    </div>
-    <div class="input-group">
-      <label for="join-password">Password</label>
-      <input type="password" id="join-password" name="password" />
-    </div>
-    <div>
-      <button id="join-btn" type="submit" class="btn">Join</button>
-    </div>
-  </form>
+<div class="container">
+  <div class="timeline">
+    <form action="/auth/join" id="join-form" method="post">
+      <div class="input-group">
+        <label for="join-email">Email</label>
+        <input type="email" id="join-email" name="email" />
+      </div>
+      <div class="input-group">
+        <label for="join-nick">NickName</label>
+        <input type="text" id="join-nick" name="nickName" />
+      </div>
+      <div class="input-group">
+        <label for="join-password">Password</label>
+        <input type="password" id="join-password" name="password" />
+      </div>
+      <div id="join-btn">
+        <button type="submit" class="btn">Join</button>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- Footer -->
 <footer>
   <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
   <br />
-  <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+  <p>Location: 7777 Nowhere, BC, A0A 9Z9</p>
 </footer>
 
 {% endblock %} {% block script %}

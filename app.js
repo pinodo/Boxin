@@ -54,7 +54,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", pageRouter);
-app.use("/", chatRouter);
+app.use("/livechat", chatRouter);
 app.use("/auth", authRouter);
 
 app.use((req, res, next) => {

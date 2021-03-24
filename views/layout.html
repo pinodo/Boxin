@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="/common.css" />
+    {% if title == "Boxin" %}
     <link rel="stylesheet" href="/index.css" />
+    {% elseif title == "Login" %}
+    <link rel="stylesheet" href="/login.css" />
+    {% elseif title == "Join" %}
     <link rel="stylesheet" href="/join.css" />
+    {% elseif title == "FAQ" %}
     <link rel="stylesheet" href="/faq.css" />
+    {% elseif title == "Live Chat" %}
     <link rel="stylesheet" href="/chat.css" />
+    {% elseif title == "Location" %}
+    <link rel="stylesheet" href="/location.css" />
+    {% else %} {% endif %}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>

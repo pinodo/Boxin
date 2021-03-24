@@ -25,15 +25,15 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/join", isNotLoggedIn, (req, res) => {
-  res.render("join", { title: "Join - Boxin" });
+  res.render("join", { title: "Join" });
 });
 
 router.get("/index", (req, res) => {
-  res.render("index", { title: "Index - Boxin" });
+  res.render("index", { title: "Boxin" });
 });
 
 router.get("/chat", (req, res) => {
-  res.render("chat", { title: "Live Chat" });
+  res.render("livechat", { title: "Live Chat" });
 });
 
 router.get("/", (req, res, next) => {

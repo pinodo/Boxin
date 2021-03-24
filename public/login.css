@@ -8,13 +8,14 @@
   height: 65vh;
   margin-top: 5rem;
 }
-#join-btn {
+#login-btn {
   display: flex;
   justify-content: flex-end;
 }
 .btn {
   display: inline-block;
   padding: 0 5px;
+  margin-right: 1.3rem;
   cursor: pointer;
   border-radius: 4px;
   background: #fff;
@@ -24,7 +25,6 @@
   line-height: 37px;
   vertical-align: top;
   font-size: 12px;
-  margin-right: 1.3rem;
 }
 input[type="text"],
 input[type="email"],

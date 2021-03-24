@@ -1,0 +1,13 @@
+#map {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+  height: 90vh;
+  width: 70%;
+}
+
+body {
+  background: url("/location.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

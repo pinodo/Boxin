@@ -1,16 +1,42 @@
 {% extends 'layout.html' %} {% block content %}
 
 <!-- Location content -->
-Location
+<div id="map"></div>
 <!-- Footer -->
 <footer>
   <p>&copy; 2021 Boxin Corporation. All rights reserved.</p>
   <br />
-  <p>Location: 7777 Nowhere, BC, A0A Z9Z</p>
+  <p>Location: 7777 Nowhere, BC, A0A 9Z9</p>
 </footer>
-{% endblock %}
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %} {% block script %}
 <script>
-  AOS.init();
+  function initMap() {
+    let options = {
+      zoom: 18,
+      center: { lat: 37.5399, lng: 127.1232 },
+    };
+    const map = new google.maps.Map(document.getElementById("map"), options);
+    let marker = new google.maps.Marker({
+      position: {
+        lat: 37.5399,
+        lng: 127.1232,
+      },
+      map: map,
+    });
+
+    let infoWindow = new google.maps.InfoWindow({
+      content:
+        "<h2>Fake Boxin Corporation</h2><br><p>Location: 7777 Nowhere, BC, A0A 9Z9</p>",
+    });
+
+    marker.addListener("click", function () {
+      infoWindow.open(map, marker);
+    });
+  }
 </script>
-{% block script %} {% endblock %}
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALJAFCR_UzOtIl20KcFbTpDNRgjjX9V6s&callback=initMap"
+></script>
+{% endblock %}
